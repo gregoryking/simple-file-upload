@@ -1,9 +1,11 @@
 const express = require('express');
-const fileUpload = require('../lib/index');
+const fileUpload = require('./lib/index');
 const app = express();
 
-const PORT = 8000;
+const PORT = 443;
 app.use('/form', express.static(__dirname + '/index.html'));
+
+app.use(express.static('./'))
 
 // default options
 app.use(fileUpload());
